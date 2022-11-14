@@ -1,9 +1,9 @@
 # Desafio MVC
-[![NPM](https://img.shields.io/npm/l/react)](https://git.gft.com/boer/desafio-mvc/-/blob/main/LICENSE) 
+[![NPM](https://img.shields.io/npm/l/react)](https://github.com/breneroliveira/spring-mvc/blob/master/LICENSE) 
 
 # Sobre o projeto
 
-Desafio prático sobre a implementação de conceitos MVC utilizando o framework Spring.
+Implementação de um projeto MVC utilizando o framework Spring.
 
 # Tecnologias utilizadas
 ## Metodologias
@@ -27,4 +27,4 @@ Desafio prático sobre a implementação de conceitos MVC utilizando o framework
 
 # Autor
 
-Brener Augusto de Oliveira
+<a href="https://www.linkedin.com/in/brener-augusto-de-oliveira/" target="_blank">Brener Augusto de Oliveira</a>
