@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" layout:decorate="~{layout.html}">
+	<meta charset="UTF-8">
+	<div layout:fragment="content">
+		<div class="card mt-4" id="sombra">
+			<div class="card-header">
+				<p class="text-primary">Banco de dados populado com sucesso.</p>
+			</div>
+			<div class="card-body">
+				<form method="GET" th:object="${receita}" th:action="@{/receita}">
+					<button type="submit" class="btn btn-primary">
+						Voltar para as receitas
+					</button>
+				</form>
+			</div>
+		</div>
+	</div>
+</html>

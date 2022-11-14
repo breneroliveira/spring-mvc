@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" 
+layout:decorate="~{layout.html}"> <!-- Referencia layout.html e usa-o como base -->
+	<div layout:fragment="content">
+		<div class="alert alert-primary mt-4" th:if="${#lists.isEmpty(lista)}">
+			Nenhum ingrediente cadastrado.
+			<form method="POST" th:object="${principal}" th:action="@{/principal/popula-BD}">
+				<button type="submit" class="btn btn-primary mt-4">
+					Popular banco de dados
+				</button>
+			</form>
+		</div>
+		<div class="alert alert-primary" th:if="${mensagem != null}" th:text="${mensagem}"></div>
+		<div th:if="${not #lists.isEmpty(lista)}" class="espaco-cima mt-4" id="center">
+			<div class="card" id="sombra">
+				<div>
+					<div class="card-header">
+						<p class="text-primary">Filtrar ingrediente</p>
+					</div>
+				</div>
+				<div class="card-body">
+					<form method="GET">
+						<div class="form-group mb-3">
+							<label for="nome">Nome do ingrediente: </label>
+							<input class="form-control" type="text" name="nome" th:value="${nome}"></input>
+						</div>
+						<button type="submit" class="btn btn-primary">Filtrar</button>
+					</form>
+				</div>
+			</div>
+			<table class="table">
+				<thead>
+				</thead>
+				<tbody>
+					<tr th:each="ingrediente : ${lista}">
+						<a href="">
+							<div class="item coisa" style="width: 18rem;">
+								<div class="card-body">
+									Nome: <p class="card-text" th:text="${ingrediente.nome}"></p>
+									Origem: <p class="card-text" th:text="${ingrediente.origem}"></p>
+									<img th:src="@{/imagens/harvest.png}" class="icone-item"/>
+								</div>
+								<a sec:authorize="hasRole('MANAGERS')" th:href="@{/ingrediente/excluir(id=${ingrediente.id})}"
+								onclick="return confirm('Deseja realmente excluir?')">
+									<img th:src="@{/imagens/trash.png}" class="descricao imagem-excluir"></img>
+								</a>
+								<a sec:authorize="hasRole('MANAGERS')" th:href="@{/ingrediente/editar(id=${ingrediente.id})}">
+									<img th:src="@{/imagens/edit.png}" class="descricao imagem-editar"></img>
+								</a>
+							</div>
+						</a>
+					</tr>
+				</tbody>
+			</table>
+			<form method="POST" th:object="${principal}" th:action="@{/principal/popula-BD}" id="sombra">
+				<button type="submit" class="btn btn-primary mb-4">
+					Popular banco de dados
+				</button>
+			</form>
+		</div>
+	</div>
+</html>
