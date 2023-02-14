@@ -19,7 +19,7 @@ Implementação de um projeto MVC utilizando o framework Spring.
 
 # Como executar o projeto
 - Ajuste o application.properties com suas credenciais. Exemplo: nome do banco de dados, username e password;
-![readme1](https://user-images.githubusercontent.com/73718076/201690461-1ca8d152-4119-46b5-9c01-9b0c15d8bb53.png)
+![readme1](https://user-images.githubusercontent.com/73718076/218889151-70f78174-4d51-47d9-a5d3-1fddea7ba96a.png)
 - Ao executar o projeto, uma tela de login será apresentada. O username e a password serão os seguintes:
 ![readme2](https://user-images.githubusercontent.com/73718076/201690530-841ed664-810f-4574-ad8f-ab6dcf43d3fd.png)
 - Ao efetuar o login, terá acesso a todas as funcionalidades do projeto;
